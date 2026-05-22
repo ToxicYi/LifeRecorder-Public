@@ -1,0 +1,53 @@
+# Android / Gradle
+.gradle/
+build/
+*/build/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Kotlin / Java
+*.class
+out/
+
+# Spring Boot / Maven
+target/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env / secrets
+.env
+*.env
+application-local.yml
+application-local.yaml
+application-secret.yml
+application-secret.yaml
+secrets/
+keys/
+tokens/
+
+# LifeRecorder runtime data
+LifeRecorderData/
+phone_sync/
+today/
+yesterday/
+history/
+summaries/
+memory/
+tasks/
+
+# Temporary
+tmp/
+temp/
+.cache/
