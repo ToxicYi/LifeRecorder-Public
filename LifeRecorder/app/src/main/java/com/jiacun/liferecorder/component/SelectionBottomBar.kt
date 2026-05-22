@@ -1,0 +1,72 @@
+package com.jiacun.liferecorder.component
+
+/**
+ * SelectionBottomBar
+ *
+ * 笔记列表进入选择模式后显示的底部操作栏，目前提供删除和更多操作入口。
+ */
+
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Delete
+import androidx.compose.material.icons.outlined.MoreHoriz
+import androidx.compose.ui.unit.dp
+@Composable
+fun SelectionBottomBar(
+    // 当前被选中的笔记 id。
+    selectedNoteId: Int,
+    // 删除当前选中笔记。
+    onDeleteNote: (Int) -> Unit,
+    // 清空选择模式。
+    onClearSelection: () -> Unit,
+    // 外部传入的布局修饰符。
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp, vertical = 20.dp),
+        shape = RoundedCornerShape(36.dp),
+        color = Color.White.copy(alpha = 0.78f),
+        shadowElevation = 12.dp,
+        border = BorderStroke(
+            width = 1.dp,
+            color = Color.White.copy(alpha = 0.75f)
+        )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 14.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            BottomActionButton(
+                icon = Icons.Outlined.Delete,
+                text = "删除",
+                onClick = {
+                    onDeleteNote(selectedNoteId)
+                    onClearSelection()
+                }
+            )
+
+            BottomActionButton(
+                icon = Icons.Outlined.MoreHoriz,
+                text = "更多",
+                onClick = {
+                    // TODO：后面放置顶、标签、移动、导出等功能
+                }
+            )
+        }
+    }
+}

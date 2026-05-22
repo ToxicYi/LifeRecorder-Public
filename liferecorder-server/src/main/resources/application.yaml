@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: liferecorder-server
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+mimo:
+  api-key: ${MIMO_API_KEY:}
+  base-url: ${MIMO_BASE_URL:https://token-plan-cn.xiaomimimo.com/v1}
+  model: ${MIMO_MODEL:mimo-v2.5}
+
+liferecorder:
+  workspace: ${LIFERECORDER_WORKSPACE:D:/LifeRecorder}
