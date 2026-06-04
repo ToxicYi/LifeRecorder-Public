@@ -17,6 +17,8 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 
 // 深色模式下使用的 Material 颜色方案。
 private val DarkColorScheme = darkColorScheme(
@@ -41,6 +43,21 @@ private val LightColorScheme = lightColorScheme(
     onSurface = Color(0xFF1C1B1F),
     */
 )
+
+// 玻璃底栏的半透明白色背景。
+val GlassBarColor = Color.White.copy(alpha = 0.78f)
+// 玻璃底栏边框颜色，透明度略高以保留浅色描边。
+val GlassBarBorderColor = Color.White.copy(alpha = 0.75f)
+// 玻璃底栏圆角半径，数值越大越接近胶囊形。
+val GlassBarCornerRadius = 36.dp
+// 玻璃底栏距离屏幕左右边缘的外边距。
+val GlassBarHorizontalPadding = 24.dp
+// 玻璃底栏距离屏幕上下方向的外边距。
+val GlassBarVerticalPadding = 20.dp
+// 玻璃底栏阴影高度，用来产生悬浮感。但会产生小白条bug
+val GlassBarShadowElevation = 25.dp
+//高度变量
+val GlassBarHeight = 76.dp
 @Composable
 fun LifeRecorderTheme(
     // 是否使用深色主题，默认跟随系统。

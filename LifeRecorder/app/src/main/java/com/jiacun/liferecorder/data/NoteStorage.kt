@@ -37,7 +37,7 @@ fun nowTime(): String {
 
 // 读取笔记总数
 fun getNoteCount(prefs: SharedPreferences): Int {
-    return prefs.getInt("note_count", 1)
+    return prefs.getInt("note_count", 0)
 }
 
 // 读取单篇笔记

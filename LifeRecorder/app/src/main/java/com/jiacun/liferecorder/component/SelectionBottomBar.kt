@@ -10,6 +10,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -32,37 +33,30 @@ fun SelectionBottomBar(
     // 外部传入的布局修饰符。
     modifier: Modifier = Modifier
 ) {
-    Surface(
+    GlassBottomBarContainer(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 24.dp, vertical = 20.dp),
-        shape = RoundedCornerShape(36.dp),
-        color = Color.White.copy(alpha = 0.78f),
-        shadowElevation = 12.dp,
-        border = BorderStroke(
-            width = 1.dp,
-            color = Color.White.copy(alpha = 0.75f)
-        )
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 14.dp),
+                .padding(horizontal = 10.dp, vertical = 8.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            BottomActionButton(
+            GlassNavButton(
                 icon = Icons.Outlined.Delete,
                 text = "删除",
+                selected = false,
                 onClick = {
                     onDeleteNote(selectedNoteId)
                     onClearSelection()
                 }
             )
 
-            BottomActionButton(
+            GlassNavButton(
                 icon = Icons.Outlined.MoreHoriz,
                 text = "更多",
+                selected = false,
                 onClick = {
                     // TODO：后面放置顶、标签、移动、导出等功能
                 }
