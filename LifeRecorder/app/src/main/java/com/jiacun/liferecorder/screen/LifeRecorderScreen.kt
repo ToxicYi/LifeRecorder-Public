@@ -17,7 +17,7 @@ package com.jiacun.liferecorder.screen
  * - 后续如清理旧代码，应先确认没有调用方再移除。
  */
 
-import com.jiacun.liferecorder.data.getActiveNoteIds
+import com.jiacun.liferecorder.feature.note.getActiveNoteIds
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,13 +31,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.jiacun.liferecorder.data.createNote
-import com.jiacun.liferecorder.data.deleteNote
-import com.jiacun.liferecorder.data.getNote
-import com.jiacun.liferecorder.data.getNoteCount
-import com.jiacun.liferecorder.data.getNotePrefs
-import com.jiacun.liferecorder.data.saveNoteContent
-import com.jiacun.liferecorder.data.saveNoteTitle
+import com.jiacun.liferecorder.feature.note.createNote
+import com.jiacun.liferecorder.feature.note.getNote
+import com.jiacun.liferecorder.feature.note.getNoteCount
+import com.jiacun.liferecorder.feature.note.getNotePrefs
+import com.jiacun.liferecorder.feature.note.saveNoteContent
+import com.jiacun.liferecorder.feature.note.saveNoteTitle
+import com.jiacun.liferecorder.feature.note.NoteEditScreen
+import com.jiacun.liferecorder.feature.note.NoteListScreen
 
 @Composable
 fun LifeRecorderScreen(
@@ -190,13 +191,8 @@ fun LifeRecorderScreen(
                 refreshKey = listVersion,
                 selectedNoteId = selectedNoteId,
                 onSelectNote = { onSelectedNoteChange(it) },
-                onClearSelection = { onSelectedNoteChange(0) },
                 onOpenNote = { id, noteText, noteTitle, noteUpdatedTime ->
                     openNote(id, noteText, noteTitle, noteUpdatedTime)
-                },
-                onDeleteNote = { id ->
-                    deleteNote(prefs, id)
-                    listVersion++
                 },
                 onCreateNote = ::createNewNote
             )

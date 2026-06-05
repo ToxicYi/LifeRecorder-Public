@@ -1,22 +1,4 @@
-package com.jiacun.liferecorder.screen
-
-/**
- * NoteListScreen
- *
- * 负责：
- * - 显示全部笔记列表。
- * - 展示标题、内容预览、更新时间。
- * - 支持打开笔记、创建笔记、长按选择和删除操作入口。
- *
- * 不负责：
- * - 不直接实现笔记正文编辑。
- * - 不直接上传笔记到后端。
- * - 不修改 NoteStorage 的保存规则。
- *
- * 数据来源：
- * - 笔记数据从上层传入的 SharedPreferences 读取。
- * - 删除、新建、打开通过回调交给上层协调。
- */
+package com.jiacun.liferecorder.feature.note
 
 import android.content.SharedPreferences
 import androidx.compose.foundation.background
@@ -39,13 +21,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.jiacun.liferecorder.component.NoteItem
-import com.jiacun.liferecorder.component.bottombar.SelectionBottomBar
-import com.jiacun.liferecorder.data.Note
-import com.jiacun.liferecorder.data.getActiveNoteIds
-import com.jiacun.liferecorder.data.getNote
 import java.text.SimpleDateFormat
 import java.util.Locale
+
+/**
+ * NoteListScreen
+ *
+ * 负责：
+ * - 显示全部笔记列表。
+ * - 展示标题、内容预览、更新时间。
+ * - 支持打开笔记、创建笔记、长按选择和删除操作入口。
+ *
+ * 不负责：
+ * - 不直接实现笔记正文编辑。
+ * - 不直接上传笔记到后端。
+ * - 不修改 NoteStorage 的保存规则。
+ *
+ * 数据来源：
+ * - 笔记数据从上层传入的 SharedPreferences 读取。
+ * - 删除、新建、打开通过回调交给上层协调。
+ */
 
 private val PageHorizontalPadding = 24.dp
 private val CardCornerRadius = 20.dp
@@ -59,9 +54,7 @@ fun NoteListScreen(
     refreshKey: Int,
     selectedNoteId: Int,
     onSelectNote: (Int) -> Unit,
-    onClearSelection: () -> Unit,
     onOpenNote: (Int, String, String, String) -> Unit,
-    onDeleteNote: (Int) -> Unit,
     onCreateNote: () -> Unit
 ) {
     val notes = loadDisplayNotes(
@@ -71,12 +64,12 @@ fun NoteListScreen(
     )
 
     Box(
-        modifier = Modifier
+        modifier = Modifier.Companion
             .fillMaxSize()
             .background(PageBackground)
     ) {
         LazyColumn(
-            modifier = Modifier
+            modifier = Modifier.Companion
                 .fillMaxSize()
                 .padding(horizontal = PageHorizontalPadding),
             contentPadding = PaddingValues(top = 12.dp, bottom = 16.dp)
@@ -85,7 +78,7 @@ fun NoteListScreen(
                 Text(
                     text = "全部笔记",
                     fontSize = 28.sp,
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = FontWeight.Companion.Bold,
                     color = Color(0xFF1C1C1E)
                 )
 
@@ -93,34 +86,36 @@ fun NoteListScreen(
                     text = "${notes.size} 篇笔记",
                     fontSize = 14.sp,
                     color = Color(0xFF8E8E93),
-                    modifier = Modifier.padding(top = 4.dp, bottom = 14.dp)
+                    modifier = Modifier.Companion.padding(top = 4.dp, bottom = 14.dp)
                 )
             }
 
             if (notes.isEmpty()) {
                 item {
                     Surface(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier.Companion.fillMaxWidth(),
                         shape = RoundedCornerShape(CardCornerRadius),
-                        color = Color.White
+                        color = Color.Companion.White
                     ) {
                         Text(
                             text = "还没有笔记，点击右下角新建一条",
                             fontSize = 15.sp,
                             color = Color(0xFF6E6E73),
-                            modifier = Modifier.padding(CardInnerPadding)
+                            modifier = Modifier.Companion.padding(CardInnerPadding)
                         )
                     }
                 }
             } else {
                 item {
                     Surface(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(CardCornerRadius),
-                        color = Color.White
+                        modifier = Modifier.Companion.fillMaxWidth(),
+                        shape = androidx.compose.foundation.shape.RoundedCornerShape(
+                            CardCornerRadius
+                        ),
+                        color = Color.Companion.White
                     ) {
                         Column(
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier.Companion.fillMaxWidth()
                         ) {
                             notes.forEachIndexed { index, note ->
                                 NoteItem(
@@ -137,7 +132,7 @@ fun NoteListScreen(
                                     HorizontalDivider(
                                         color = Color(0xFFE5E5EA),
                                         thickness = 1.dp,
-                                        modifier = Modifier.padding(start = if (selectedNoteId == 0) 16.dp else 54.dp)
+                                        modifier = Modifier.Companion.padding(start = if (selectedNoteId == 0) 16.dp else 54.dp)
                                     )
                                 }
                             }
@@ -150,29 +145,21 @@ fun NoteListScreen(
         if (selectedNoteId == 0) {
             FloatingActionButton(
                 onClick = onCreateNote,
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
+                modifier = Modifier.Companion
+                    .align(Alignment.Companion.BottomEnd)
                     .padding(18.dp),
-                containerColor = Color.White,
+                containerColor = Color.Companion.White,
                 contentColor = Color(0xFF1C1C1E),
-                shape = RoundedCornerShape(22.dp)
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(22.dp)
             ) {
                 Text(
                     text = "+",
                     fontSize = 28.sp,
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Companion.Light
                 )
             }
         }
 
-        if (selectedNoteId != 0) {
-            SelectionBottomBar(
-                selectedNoteId = selectedNoteId,
-                onDeleteNote = onDeleteNote,
-                onClearSelection = onClearSelection,
-                modifier = Modifier.align(Alignment.BottomCenter)
-            )
-        }
     }
 }
 

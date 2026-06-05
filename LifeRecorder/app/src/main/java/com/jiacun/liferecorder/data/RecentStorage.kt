@@ -9,6 +9,10 @@ package com.jiacun.liferecorder.data
 import android.content.ContentUris
 import android.content.Context
 import android.provider.MediaStore
+import com.jiacun.liferecorder.feature.note.getActiveNoteIds
+import com.jiacun.liferecorder.feature.note.getNote
+import com.jiacun.liferecorder.feature.note.getNoteCount
+import com.jiacun.liferecorder.feature.note.getNotePrefs
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.TimeUnit

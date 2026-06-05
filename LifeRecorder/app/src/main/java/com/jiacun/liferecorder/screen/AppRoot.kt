@@ -22,8 +22,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.jiacun.liferecorder.component.bottombar.LifeBottomBar
 import com.jiacun.liferecorder.component.LifeTopBar
+import com.jiacun.liferecorder.feature.note.NoteEditScreen
+import com.jiacun.liferecorder.feature.note.NoteListScreen
+import com.jiacun.liferecorder.feature.note.rememberNoteState
 import com.jiacun.liferecorder.navigation.LifeRoute
-import com.jiacun.liferecorder.state.rememberNoteState
 import com.jiacun.liferecorder.navigation.openNoteAndNavigate
 import com.jiacun.liferecorder.navigation.createNoteAndNavigate
 import com.jiacun.liferecorder.navigation.navigateRoot
@@ -176,10 +178,8 @@ fun AppRoot() {
                     refreshKey = noteState.listVersion,
                     selectedNoteId = noteState.selectedNoteId,
                     onSelectNote = { noteState.selectNote(it) },
-                    onClearSelection = { noteState.clearSelection() },
-                    onOpenNote = { id, _, _, _ ->  openNoteAndNavigate(noteState, navController, id) },
-                    onDeleteNote = { id ->
-                        noteState.removeNote(id)
+                    onOpenNote = { id, _, _, _ ->
+                        openNoteAndNavigate(noteState, navController, id)
                     },
                     onCreateNote = {
                         createNoteAndNavigate(noteState, navController)

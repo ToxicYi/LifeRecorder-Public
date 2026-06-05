@@ -1,7 +1,7 @@
 package com.jiacun.liferecorder.navigation
 
 import androidx.navigation.NavController
-import com.jiacun.liferecorder.state.NoteState
+import com.jiacun.liferecorder.feature.note.NoteState
 
 fun openNoteAndNavigate(
     noteState: NoteState,

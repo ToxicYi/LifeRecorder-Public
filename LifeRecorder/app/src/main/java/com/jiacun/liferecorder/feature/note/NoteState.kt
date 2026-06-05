@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.state
+package com.jiacun.liferecorder.feature.note
 
 /**
  * NoteState.kt
@@ -14,15 +14,6 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.jiacun.liferecorder.data.createNote
-import com.jiacun.liferecorder.data.deleteNote
-import com.jiacun.liferecorder.data.getActiveNoteIds
-import com.jiacun.liferecorder.data.getNote
-import com.jiacun.liferecorder.data.getNoteCount
-import com.jiacun.liferecorder.data.getNotePrefs
-import com.jiacun.liferecorder.data.saveNoteContent
-import com.jiacun.liferecorder.data.saveNoteTitle
-
 /**
  * NoteState
  * 集中保存笔记相关状态，并封装新建、打开、删除、保存等笔记操作。

@@ -1,11 +1,4 @@
-package com.jiacun.liferecorder.component
-
-/**
- * NoteItem
- *
- * 笔记列表中的单条笔记行，负责展示标题、内容预览、更新时间，
- * 并处理点击打开和长按选择。
- */
+package com.jiacun.liferecorder.feature.note
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -27,6 +20,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+/**
+ * NoteItem
+ *
+ * 笔记列表中的单条笔记行，负责展示标题、内容预览、更新时间，
+ * 并处理点击打开和长按选择。
+ */
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NoteItem(
@@ -46,7 +47,7 @@ fun NoteItem(
     onSelectNote: (Int) -> Unit
 ) {
     Row(
-        modifier = Modifier
+        modifier = Modifier.Companion
             .fillMaxWidth()
             .combinedClickable(
                 onClick = {
@@ -61,7 +62,7 @@ fun NoteItem(
                 }
             )
             .padding(horizontal = 16.dp, vertical = 14.dp),
-        verticalAlignment = Alignment.Top
+        verticalAlignment = Alignment.Companion.Top
     ) {
         if (selectedNoteId != 0) {
             Icon(
@@ -72,7 +73,7 @@ fun NoteItem(
                 },
                 contentDescription = if (selectedNoteId == id) "已选择" else "未选择",
                 tint = Color(0xFF3A3A3C),
-                modifier = Modifier
+                modifier = Modifier.Companion
                     .width(30.dp)
                     .size(22.dp)
                     .padding(top = 1.dp)
@@ -80,11 +81,11 @@ fun NoteItem(
         }
 
         Column(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.Companion.fillMaxWidth()
         ) {
             Text(
                 text = if (title.isBlank()) "无标题笔记" else title,
-                fontWeight = FontWeight.SemiBold,
+                fontWeight = FontWeight.Companion.SemiBold,
                 fontSize = 16.sp,
                 color = Color(0xFF1C1C1E)
             )
@@ -93,14 +94,14 @@ fun NoteItem(
                 text = if (content.isBlank()) "暂无内容" else content.take(72),
                 fontSize = 13.sp,
                 color = Color(0xFF6E6E73),
-                modifier = Modifier.padding(top = 6.dp)
+                modifier = Modifier.Companion.padding(top = 6.dp)
             )
 
             Text(
                 text = if (updatedTime.isBlank()) "未记录时间" else updatedTime,
                 fontSize = 12.sp,
                 color = Color(0xFF8E8E93),
-                modifier = Modifier.padding(top = 6.dp)
+                modifier = Modifier.Companion.padding(top = 6.dp)
             )
         }
     }
