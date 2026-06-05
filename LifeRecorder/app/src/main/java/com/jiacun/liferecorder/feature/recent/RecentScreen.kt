@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.screen
+package com.jiacun.liferecorder.feature.recent
 
 /**
  * RecentScreen
@@ -55,8 +55,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
-import com.jiacun.liferecorder.data.RecentItem
-import com.jiacun.liferecorder.data.loadRecentItems
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date

@@ -28,6 +28,7 @@ import com.jiacun.liferecorder.feature.note.NoteListScreen
 import com.jiacun.liferecorder.feature.note.rememberNoteState
 import com.jiacun.liferecorder.feature.file.storage.FilesScreen
 import com.jiacun.liferecorder.feature.photo.PhotosScreen
+import com.jiacun.liferecorder.feature.recent.RecentScreen
 import com.jiacun.liferecorder.navigation.LifeRoute
 import com.jiacun.liferecorder.navigation.openNoteAndNavigate
 import com.jiacun.liferecorder.navigation.createNoteAndNavigate

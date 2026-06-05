@@ -42,6 +42,7 @@ import com.jiacun.liferecorder.feature.note.NoteEditScreen
 import com.jiacun.liferecorder.feature.note.NoteListScreen
 import com.jiacun.liferecorder.feature.file.storage.FilesScreen
 import com.jiacun.liferecorder.feature.photo.PhotosScreen
+import com.jiacun.liferecorder.feature.recent.RecentScreen
 
 @Composable
 fun LifeRecorderScreen(
