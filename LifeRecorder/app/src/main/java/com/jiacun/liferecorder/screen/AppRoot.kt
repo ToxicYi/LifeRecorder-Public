@@ -20,7 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.jiacun.liferecorder.component.LifeBottomBar
+import com.jiacun.liferecorder.component.bottombar.LifeBottomBar
 import com.jiacun.liferecorder.component.LifeTopBar
 import com.jiacun.liferecorder.navigation.LifeRoute
 import com.jiacun.liferecorder.state.rememberNoteState
@@ -237,7 +237,7 @@ fun AppRoot() {
             }
         }
 
-        if (shouldShowBottomBar(currentRoute)) {
+        if (shouldShowBottomBar(currentRoute) || noteState.selectedNoteId != 0) {
             LifeBottomBar(
                 modifier = Modifier.align(Alignment.BottomCenter),
                 selectedNoteId = noteState.selectedNoteId,
@@ -250,6 +250,12 @@ fun AppRoot() {
                         LifeRoute.Mine -> navigateRoot(noteState, navController, LifeRoute.Mine)
                         else -> navController.navigate(route)
                     }
+                },
+                onDeleteNote = { id ->
+                    noteState.removeNote(id)
+                },
+                onClearSelection = {
+                    noteState.clearSelection()
                 }
             )
         }

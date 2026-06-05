@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.component
+package com.jiacun.liferecorder.component.bottombar
 
 /**
  * SelectionBottomBar
@@ -6,22 +6,18 @@ package com.jiacun.liferecorder.component
  * 笔记列表进入选择模式后显示的底部操作栏，目前提供删除和更多操作入口。
  */
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.MoreHoriz
 import androidx.compose.ui.unit.dp
+
 @Composable
 fun SelectionBottomBar(
     // 当前被选中的笔记 id。

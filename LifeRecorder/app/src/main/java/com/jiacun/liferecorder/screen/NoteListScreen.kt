@@ -40,7 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jiacun.liferecorder.component.NoteItem
-import com.jiacun.liferecorder.component.SelectionBottomBar
+import com.jiacun.liferecorder.component.bottombar.SelectionBottomBar
 import com.jiacun.liferecorder.data.Note
 import com.jiacun.liferecorder.data.getActiveNoteIds
 import com.jiacun.liferecorder.data.getNote

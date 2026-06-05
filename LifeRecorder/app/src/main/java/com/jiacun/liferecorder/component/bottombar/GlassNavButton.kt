@@ -1,6 +1,5 @@
-package com.jiacun.liferecorder.component
+package com.jiacun.liferecorder.component.bottombar
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
@@ -13,7 +12,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.TextButton
-
+//负责统一的图标加文字按钮样式
 @Composable
 fun GlassNavButton(
     icon: ImageVector,

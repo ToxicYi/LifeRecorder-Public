@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.component
+package com.jiacun.liferecorder.component.bottombar
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
@@ -18,7 +18,7 @@ import com.jiacun.liferecorder.ui.theme.GlassBarHeight
 import com.jiacun.liferecorder.ui.theme.GlassBarHorizontalPadding
 import com.jiacun.liferecorder.ui.theme.GlassBarShadowElevation
 import com.jiacun.liferecorder.ui.theme.GlassBarVerticalPadding
-
+//负责统一的玻璃外壳
 @Composable
 fun GlassBottomBarContainer(
     modifier: Modifier = Modifier,
