@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.screen
+package com.jiacun.liferecorder.feature.photo
 
 /**
  * PhotosScreen
@@ -57,8 +57,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import coil.compose.rememberAsyncImagePainter
-import com.jiacun.liferecorder.data.loadAllImageUris
-
 @Composable
 fun PhotosScreen() {
     val context = LocalContext.current

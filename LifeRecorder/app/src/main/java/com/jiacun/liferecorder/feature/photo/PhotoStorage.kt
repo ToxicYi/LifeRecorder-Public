@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.data
+package com.jiacun.liferecorder.feature.photo
 
 /**
  * PhotoStorage
