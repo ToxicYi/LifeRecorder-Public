@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.screen
+package com.jiacun.liferecorder.feature.file.storage
 
 /**
  * FilesScreen
@@ -53,15 +53,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.jiacun.liferecorder.component.FileItemRow
-import com.jiacun.liferecorder.data.LifeFileItem
-import com.jiacun.liferecorder.data.getAuthorizedTreeUri
-import com.jiacun.liferecorder.data.loadAuthorizedTreeFiles
-import com.jiacun.liferecorder.data.loadPathDirectoryFiles
-import com.jiacun.liferecorder.data.loadSharedStorageFiles
-import com.jiacun.liferecorder.data.openLifeFileItem
-import com.jiacun.liferecorder.data.saveAuthorizedTreeUri
-
 @Composable
 fun FilesScreen(
     onNestedFolderChange: (Boolean) -> Unit = {},

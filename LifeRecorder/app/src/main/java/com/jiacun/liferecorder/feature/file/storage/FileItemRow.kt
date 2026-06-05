@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.component
+package com.jiacun.liferecorder.feature.file.storage
 
 /**
  * FileItemRow

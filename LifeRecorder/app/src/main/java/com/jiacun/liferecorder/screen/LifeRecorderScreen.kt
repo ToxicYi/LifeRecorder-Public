@@ -37,8 +37,10 @@ import com.jiacun.liferecorder.feature.note.getNoteCount
 import com.jiacun.liferecorder.feature.note.getNotePrefs
 import com.jiacun.liferecorder.feature.note.saveNoteContent
 import com.jiacun.liferecorder.feature.note.saveNoteTitle
+import com.jiacun.liferecorder.feature.file.library.FileLibraryScreen
 import com.jiacun.liferecorder.feature.note.NoteEditScreen
 import com.jiacun.liferecorder.feature.note.NoteListScreen
+import com.jiacun.liferecorder.feature.file.storage.FilesScreen
 import com.jiacun.liferecorder.feature.photo.PhotosScreen
 
 @Composable

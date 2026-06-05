@@ -22,9 +22,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.jiacun.liferecorder.component.bottombar.LifeBottomBar
 import com.jiacun.liferecorder.component.LifeTopBar
+import com.jiacun.liferecorder.feature.file.library.FileLibraryScreen
 import com.jiacun.liferecorder.feature.note.NoteEditScreen
 import com.jiacun.liferecorder.feature.note.NoteListScreen
 import com.jiacun.liferecorder.feature.note.rememberNoteState
+import com.jiacun.liferecorder.feature.file.storage.FilesScreen
 import com.jiacun.liferecorder.feature.photo.PhotosScreen
 import com.jiacun.liferecorder.navigation.LifeRoute
 import com.jiacun.liferecorder.navigation.openNoteAndNavigate

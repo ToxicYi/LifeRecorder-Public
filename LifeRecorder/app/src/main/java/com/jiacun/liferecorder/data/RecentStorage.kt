@@ -9,6 +9,8 @@ package com.jiacun.liferecorder.data
 import android.content.ContentUris
 import android.content.Context
 import android.provider.MediaStore
+import com.jiacun.liferecorder.feature.file.library.formatImportedFileSize
+import com.jiacun.liferecorder.feature.file.library.getImportedFiles
 import com.jiacun.liferecorder.feature.note.getActiveNoteIds
 import com.jiacun.liferecorder.feature.note.getNote
 import com.jiacun.liferecorder.feature.note.getNoteCount

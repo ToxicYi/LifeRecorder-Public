@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.screen
+package com.jiacun.liferecorder.feature.file.library
 
 /**
  * FileLibraryScreen
@@ -48,12 +48,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.jiacun.liferecorder.data.ImportedFileItem
-import com.jiacun.liferecorder.data.LifeFileItem
-import com.jiacun.liferecorder.data.formatImportedFileSize
-import com.jiacun.liferecorder.data.getImportedFiles
-import com.jiacun.liferecorder.data.importSharedUriToFileLibrary
-import com.jiacun.liferecorder.data.openLifeFileItem
+import com.jiacun.liferecorder.feature.file.storage.LifeFileItem
+import com.jiacun.liferecorder.feature.file.storage.openLifeFileItem
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

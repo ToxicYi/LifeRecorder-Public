@@ -12,8 +12,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import com.jiacun.liferecorder.data.importSharedTextToFileLibrary
-import com.jiacun.liferecorder.data.importSharedUriToFileLibrary
+import com.jiacun.liferecorder.feature.file.library.importSharedTextToFileLibrary
+import com.jiacun.liferecorder.feature.file.library.importSharedUriToFileLibrary
 
 class ShareReceiveActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
