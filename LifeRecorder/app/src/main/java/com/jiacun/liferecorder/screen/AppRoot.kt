@@ -23,6 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import com.jiacun.liferecorder.component.bottombar.LifeBottomBar
 import com.jiacun.liferecorder.component.LifeTopBar
 import com.jiacun.liferecorder.feature.file.library.FileLibraryScreen
+import com.jiacun.liferecorder.feature.mine.MineScreen
 import com.jiacun.liferecorder.feature.note.NoteEditScreen
 import com.jiacun.liferecorder.feature.note.NoteListScreen
 import com.jiacun.liferecorder.feature.note.rememberNoteState

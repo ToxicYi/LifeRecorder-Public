@@ -1,4 +1,4 @@
-package com.jiacun.liferecorder.screen
+package com.jiacun.liferecorder.feature.mine
 
 /**
  * MineScreen
